@@ -1,18 +1,7 @@
 #include<iostream>
 #include<iomanip>
 #include"CFraction.h"
-using namespace std; typedef long long type;
-type GCD(type x, type y)
-{
-	type t;
-	while (y != 0)
-	{
-		t = x % y;
-		x = y;
-		y = t;
-	}
-	return x;
-}
+using namespace std;
 void ShowFraction(CFraction f,string name,int i=15)//i为输出精度
 {
 	cout << name << '=' << f.GetNumerator() << '/' << f.GetDenominator() << '\t'
