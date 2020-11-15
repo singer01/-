@@ -203,3 +203,27 @@ CFraction CFraction::operator/(CFraction fraction) const
 {
 	return operator*(fraction.Reciprocal());//除以一个数等于乘这个数的倒数
 }
+
+CFraction CFraction::operator+=(const CFraction& fraction)
+{
+	Assign(operator+(fraction));
+	return *this;
+}
+
+CFraction CFraction::operator-=(const CFraction& fraction)
+{
+	Assign(operator-(fraction));
+	return *this;
+}
+
+CFraction CFraction::operator*=(const CFraction& fraction)
+{
+	Assign(operator*(fraction));
+	return *this;
+}
+
+CFraction CFraction::operator/=(const CFraction& fraction)
+{
+	Assign(operator/(fraction));
+	return *this;
+}

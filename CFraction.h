@@ -4,8 +4,8 @@ typedef class CFraction
 {
 private:
 	typedef long long type;
-	type numerator;
-	type denominator;
+	type numerator;//分子
+	type denominator;//分母
 	static type GCD(type x, type y);
 	static type LCM(type x, type y);
 public:
@@ -23,9 +23,9 @@ public:
 	void Assign(const CFraction&);
 	void ReductionOfTheFraction();//约分
 	void ReductionOfTheFractionToACommonDenominator(CFraction&);//通分
-	CFraction operator=(const CFraction&);
-	CFraction Reciprocal();
+	CFraction Reciprocal();//倒数
 	type Compare(CFraction)const;
+	CFraction operator=(const CFraction&);
 	bool operator==(CFraction)const;
 	bool operator!=(CFraction)const;
 	bool operator>(CFraction)const;
@@ -36,5 +36,9 @@ public:
 	CFraction operator-(CFraction)const;
 	CFraction operator*(CFraction)const;
 	CFraction operator/(CFraction)const;
+	CFraction operator+=(const CFraction&);
+	CFraction operator-=(const CFraction&);
+	CFraction operator*=(const CFraction&);
+	CFraction operator/=(const CFraction&);
 }分数;
 
