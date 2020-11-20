@@ -1,4 +1,5 @@
 #include "CFraction.h"
+#include<Windows.h>
 CFraction::type CFraction::GCD(type x, type y)
 {
 	type t;
@@ -77,12 +78,12 @@ void CFraction::Assign(long double d) throw()
 	if (d == 0)
 		throw std::invalid_argument("参数为0！");
 	type i = 1;
-	while (static_cast<long double>(static_cast<type>(d)) != d)
+	while (d - static_cast<long double>(static_cast<type>(d)) > 1e-15)
 	{
 		d *= 10;
 		i *= 10;
-		if (i > 100000000)
-			throw std::invalid_argument("小数位数过长，如参数是除法表达式，可能是无限不循环小数！");
+		if (i > 10000000000)
+			OutputDebugStringW(L"小数位数过长，如参数是除法表达式，可能是无限不循环小数！\0");
 	}
 	this->numerator = static_cast<type>(d);
 	this->denominator = i;

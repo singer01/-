@@ -1,3 +1,6 @@
+#define DEBUG
+#ifdef DEBUG
+#pragma message("正在编译...")
 #include<iostream>
 #include<iomanip>
 #include"CFraction.h"
@@ -11,7 +14,7 @@ void ShowFraction(CFraction f, string name, int i = 15)//i为输出精度
 int main()
 {
 	try {
-		CFraction f1(15,75);
+		CFraction f1(15, 75);
 		ShowFraction(f1, "分数1");
 		f1.ReductionOfTheFraction();
 		ShowFraction(f1, "约分后，分数1");
@@ -30,12 +33,14 @@ int main()
 		else
 			cout << "7/49不能化成有限小数" << endl;
 	}
-	catch(invalid_argument except){
+	catch (invalid_argument except) {
 		cout << "出现参数无效异常！异常信息：" << except.what();
 	}
-	catch(...){
-		cout << "出现其它类型异常！"<<endl;
+	catch (...) {
+		cout << "出现其它类型异常！" << endl;
 	}
 	system("pause");
 	return 0;
 }
+
+#endif // DEBUG
