@@ -82,9 +82,9 @@ void CFraction::Assign(long double d) throw()
 	{
 		d *= 10;
 		i *= 10;
-		if (i > 10000000000)
-			OutputDebugStringW(L"小数位数过长，如参数是除法表达式，可能是无限不循环小数！\0");
 	}
+	if (i > 10000000000)
+		OutputDebugStringW(L"小数位数过长，如参数是除法表达式，可能是无限不循环小数！\0");
 	this->numerator = static_cast<type>(d);
 	this->denominator = i;
 	this->ReductionOfTheFraction();

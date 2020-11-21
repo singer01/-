@@ -1,6 +1,3 @@
-#define DEBUG
-#ifdef DEBUG
-#pragma message("е§дкБрвы...")
 #include<iostream>
 #include<iomanip>
 #include"CFraction.h"
@@ -42,5 +39,3 @@ int main()
 	system("pause");
 	return 0;
 }
-
-#endif // DEBUG
